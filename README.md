@@ -5,25 +5,24 @@ Bulut Bilişim ve Yapay Zeka dersim için UCI Mushroom Dataset kullanarak , mant
 Mantarın morfolojik özelliklerinden zehirlilik tespiti yapmak
 
 ## Projede Gerçekleştirilen Adımlar
-1-Veri seti data/mushrooms.csv olarak projeye yerleştirildi.
+1-Veri setini data/mushrooms.csv olarak projeye yerleştirdim.
 
-2-Ham veri ön işleme adımından geçirildi.
+2-Ham veriyi preprocecsing işleminden geçirdim.
 
-3-Hedef sütun e -> 0 ve p -> 1 olacak şekilde dönüştürüldü.
+3-Hedef sutun e -> 0 ve p -> 1 olacak şekilde dönüştürdüm.
 
-4-Kategorik değişkenler One-Hot Encoding ile modele uygun hale getirildi.
+4-Kategorik değişkenler One-Hot Encoding ile modele uygun hale getirdim.
 
-5-Birden fazla model eğitildi ve karşılaştırıldı.
+5-Birden fazla modeli eğitip karşılaştırdım.
 
-6-Nihai model seçiminde yanlış negatif sayısı önceliklendirildi.
+6-En iyi modeli seçerken yanlış negatif sayısına önem verdim.
 
-7-Eğitimli model models/best_model.joblib olarak kaydedildi.
+7-Eğitimli modeli models/best_model.joblib olarak kaydettim.
 
-8-Değerlendirme sonuçları results/ klasörüne yazıldı.
+8-Değerlendirme sonuçlarını results/ klasörüne yazdım.
 
-9-Streamlit arayüzü ile kullanıcıya tahmin ve analiz ekranı sunuldu.
+9-Streamlit arayüzü ile kullanıcıya tahmin ve analiz ekranı oluşturdum.
 
-10-Arayüzde Türkçe etiketler, açıklamalar ve özellik önem görselleştirmeleri düzenlendi.
 
 ## Kullanılan Teknolojiler
 -Python
