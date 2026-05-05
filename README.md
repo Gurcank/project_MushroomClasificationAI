@@ -6,14 +6,23 @@ Mantarın morfolojik özelliklerinden zehirlilik tespiti yapmak
 
 ## Projede Gerçekleştirilen Adımlar
 1-Veri seti data/mushrooms.csv olarak projeye yerleştirildi.
+
 2-Ham veri ön işleme adımından geçirildi.
+
 3-Hedef sütun e -> 0 ve p -> 1 olacak şekilde dönüştürüldü.
+
 4-Kategorik değişkenler One-Hot Encoding ile modele uygun hale getirildi.
+
 5-Birden fazla model eğitildi ve karşılaştırıldı.
+
 6-Nihai model seçiminde yanlış negatif sayısı önceliklendirildi.
+
 7-Eğitimli model models/best_model.joblib olarak kaydedildi.
+
 8-Değerlendirme sonuçları results/ klasörüne yazıldı.
+
 9-Streamlit arayüzü ile kullanıcıya tahmin ve analiz ekranı sunuldu.
+
 10-Arayüzde Türkçe etiketler, açıklamalar ve özellik önem görselleştirmeleri düzenlendi.
 
 ## Kullanılan Teknolojiler
