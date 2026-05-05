@@ -1,11 +1,8 @@
-# Yapay Zeka Destekli Mantar Zehirlilik Tespit Sistemi
-
-Bu proje, UCI Mushroom Dataset kullanarak mantarların **yenilebilir (0)** veya **zehirli (1)** olduğunu tahmin eden bir binary classification sistemidir.
+# Yapay Zeka Destekli Mantar Zehirlilik Tahmin Modeli
+Bulut Bilişim ve Yapay Zeka dersim için UCI Mushroom Dataset kullanarak , mantarların "Yenilebilir (0)" veya "Zehirli (1)" olduğunu tahmin eden bir model yaptım.
 
 ## Proje Amacı
-- Mantarın morfolojik özelliklerinden zehirlilik tespiti yapmak
-- Yanlış negatifleri (zehirli mantarı yenilebilir gösterme) azaltmak
-- Modeli basit bir Streamlit arayüzü ile son kullanıcıya sunmak
+Mantarın morfolojik özelliklerinden zehirlilik tespiti yapmak
 
 ## Teknoloji Yığını
 - Python
@@ -34,7 +31,7 @@ python -m pip install -r requirements.txt
 ```
 
 ## Veri Seti
-Kaggle UCI Mushroom Dataset dosyasını `data/mushrooms.csv` olarak yerleştir.
+Kaggle UCI Mushroom Dataset dosyasını `data/mushrooms.csv` olarak yerleştirdim.
 
 ## Model Eğitimi
 ```bash
