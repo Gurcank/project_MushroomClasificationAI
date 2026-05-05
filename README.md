@@ -4,66 +4,48 @@ Bulut Bilişim ve Yapay Zeka dersim için UCI Mushroom Dataset kullanarak , mant
 ## Proje Amacı
 Mantarın morfolojik özelliklerinden zehirlilik tespiti yapmak
 
-## Teknoloji Yığını
-- Python
-- Pandas, NumPy
-- Scikit-learn
-- Streamlit
-- Joblib
-- Matplotlib, Seaborn, Plotly
+## Projede Gerçekleştirilen Adımlar
+1-Veri seti data/mushrooms.csv olarak projeye yerleştirildi.
+2-Ham veri ön işleme adımından geçirildi.
+3-Hedef sütun e -> 0 ve p -> 1 olacak şekilde dönüştürüldü.
+4-Kategorik değişkenler One-Hot Encoding ile modele uygun hale getirildi.
+5-Birden fazla model eğitildi ve karşılaştırıldı.
+6-Nihai model seçiminde yanlış negatif sayısı önceliklendirildi.
+7-Eğitimli model models/best_model.joblib olarak kaydedildi.
+8-Değerlendirme sonuçları results/ klasörüne yazıldı.
+9-Streamlit arayüzü ile kullanıcıya tahmin ve analiz ekranı sunuldu.
+10-Arayüzde Türkçe etiketler, açıklamalar ve özellik önem görselleştirmeleri düzenlendi.
 
-## Klasör Yapısı
-- `data/` ham veri seti
-- `notebooks/` EDA ve model deneme not defterleri
-- `src/` ön işleme, modelleme ve tahmin modülleri
-- `scripts/` eğitim komutları
-- `app/` Streamlit arayüzü
-- `models/` kaydedilmiş model artifact'i
-- `results/` metrikler ve görseller
+## Kullanılan Teknolojiler
+-Python
+-Pandas
+-NumPy
+-Scikit-learn
+-Streamlit
+-Joblib
+-Matplotlib
+-Seaborn
+-Plotly
 
-## Not Defterleri
-- `notebooks/EDA.ipynb` veri keşfi ve ilk analizler
-- `notebooks/model_training.ipynb` model karşılaştırma ve seçim denemeleri
+## Proje Dosyaları
+-src/preprocessing.py             Preprocessing işlemlerinin gerçekleştiği dosya
+-src/model.py                     Logistic Regression, Decision Tree, Random Forest, Gradient Boosting gibi modelleri kurup deneyip en iyisini seçer.
+-src/predict.py                   Seçilen modeli kullanarak tek ve toplu kayıt için tahmin üretir.
+-scripts/train.py                 Eğitim sürecini başlatır modeli eğitir ve en iyisini kaydeder.
+-app/streamlit_app.py             UI/UX kısmı
+-models/best_model.joblib         Kaydedilen en iyi modeldir.Uygulama tahmin yaparken bunu kullanır.
+-results/leaderboard.csv          Denenen modellerin karşılaştırmalı tablosudur.
+-results/metrics.json             Seçilen modelin metriklerini tutar.
+-notebooks/EDA.ipynb              Keşifsel veri analizi burda yapılır.
+-notebooks/model_training.ipynb   Modeller arasından en iyisini seçerkenki sürece ait notlar.
 
-## Kurulum
-```bash
-python -m pip install -r requirements.txt
-```
+## Modelleme Süreci
+-Veri setini %80 eğitim ve %20 test olarak ayırdım.
+-Kategorik özellikleri OneHotEncoder ile sayısallaştırıldım.
+-Logistic Regression, Decision Tree, Random Forest ve Gradient Boosting modellerini karşılaştırıldım.
+-False Negative sayısı, sonra Recall, sonra F1 skorunu dikkate alarak en iyi modeli seçtim.
 
-## Veri Seti
-Kaggle UCI Mushroom Dataset dosyasını `data/mushrooms.csv` olarak yerleştirdim.
-
-## Model Eğitimi
-```bash
-python -m scripts.train --data data/mushrooms.csv --output models/best_model.joblib
-```
-
-İstersen `?` ile işaretli kayıtları silmek için:
-```bash
-python -m scripts.train --data data/mushrooms.csv --output models/best_model.joblib --drop-unknown-rows
-```
-
-Egitim sonrasi `results/` altinda su dosyalar olusur:
-- `leaderboard.csv` model karsilastirma tablosu
-- `metrics.json` secilen model metrikleri
-- `confusion_matrix.png` confusion matrix gorseli
-
-## Arayüzü Çalıştırma
-```bash
-python -m streamlit run app/streamlit_app.py
-```
-
-Arayuz ozellikleri:
-- Tahmin sekmesi: 22 ozellik girisi, olasilik ve risk odakli sonuc karti
-- Model Analizi sekmesi: metrik tablosu ve ozellik onem bar grafigi
-
-## Notlar
-- Nihai model seçiminde accuracy yerine **false negative minimizasyonu** ve **recall** önceliklidir.
-- Zehirli mantarı yenilebilir olarak etiketlemek kritik hata kabul edilir.
-
-## Teslim İçin Önerilen Çıktılar
-- GitHub repo
-- README
-- Ekran görüntüleri
-- Demo video veya kısa rapor
-- Eğitimli model dosyası
+## UI/UX Kısmı
+Streamlit kullanarak 2 sekme oluşturdum:
+-Tahmin sekmesi: Kullanıcının mantar özelliklerini seçip sonucunu görebildiği sekme.
+-Model Analizi sekmesi: Modelin özelliklerini ve modelle ilgili grafiklerin yer aldığı bilgilendirme sekmesi.
